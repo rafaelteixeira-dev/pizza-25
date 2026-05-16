@@ -923,3 +923,261 @@ footer h3 {
     display: none;
   }
 }
+
+/* Ajustes finais de apresentação comercial */
+.demo-note {
+  margin-top: 18px;
+  padding: 12px 16px;
+  border-radius: 10px;
+  background: rgba(255, 196, 0, 0.14);
+  border: 1px solid rgba(255, 196, 0, 0.35);
+  color: inherit;
+  font-size: 14px;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.cardapio-demo-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin: 22px 0;
+}
+
+.cardapio-demo-cards article {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 196, 0, 0.32);
+  border-radius: 14px;
+  padding: 18px;
+  box-shadow: 0 10px 24px rgba(0,0,0,.16);
+}
+
+.cardapio-demo-cards h3 {
+  color: var(--yellow, #ffc400);
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+.cardapio-demo-cards p {
+  color: #ffe7e7;
+  line-height: 1.4;
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+.cardapio-demo-cards span {
+  display: inline-block;
+  background: var(--green, #079d43);
+  color: white;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+#taxa {
+  text-align: right;
+  font-size: 13px;
+}
+
+@media (max-width: 900px) {
+  .cardapio-demo-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .cardapio-demo-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .demo-note {
+    font-size: 13px;
+  }
+}
+
+
+.selling-grid,
+.reviews-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:18px;
+margin-top:24px;
+}
+
+.selling-card,
+.review-card{
+background:rgba(255,255,255,.08);
+padding:22px;
+border-radius:16px;
+border:1px solid rgba(255,196,0,.25);
+box-shadow:0 10px 25px rgba(0,0,0,.18);
+transition:.25s;
+}
+
+.selling-card:hover,
+.review-card:hover{
+transform:translateY(-4px);
+}
+
+.demo-highlight{
+margin-top:24px;
+padding:18px;
+border-radius:14px;
+background:rgba(255,196,0,.12);
+border:1px solid rgba(255,196,0,.28);
+text-align:center;
+font-weight:bold;
+}
+
+.mobile-order-btn{
+display:none;
+}
+
+.whatsapp-fixed-top{
+margin-top:16px;
+display:inline-flex;
+}
+
+.rafael-sign{
+text-align:center;
+padding:20px;
+font-size:14px;
+opacity:.8;
+}
+
+button:disabled{
+opacity:.5;
+cursor:not-allowed;
+background:#777 !important;
+}
+
+@media(max-width:700px){
+
+.mobile-order-btn{
+position:fixed;
+bottom:14px;
+left:14px;
+right:14px;
+display:flex;
+justify-content:center;
+align-items:center;
+background:#079d43;
+color:#fff;
+text-decoration:none;
+padding:16px;
+border-radius:14px;
+font-weight:bold;
+z-index:999;
+box-shadow:0 10px 25px rgba(0,0,0,.25);
+}
+
+}
+
+
+/* ===== Correções finais de layout ===== */
+
+/* Evita que o carrinho "tampe" conteúdo em telas médias/altas: ele rola junto depois de certo limite */
+.cart {
+  top: 96px;
+  max-height: calc(100vh - 120px);
+  overflow-y: auto;
+}
+
+/* Se a tela estiver mais baixa ou estreita, o carrinho deixa de ser sticky */
+@media (max-width: 1250px), (max-height: 760px) {
+  .cart {
+    position: static !important;
+    max-height: none;
+    overflow: visible;
+  }
+}
+
+/* Seções comerciais fora do grid principal, alinhadas com o restante do site */
+.selling-section,
+.custom-section,
+.reviews {
+  width: min(1200px, 90%);
+  margin: 32px auto;
+}
+
+/* Corrige avaliações que estavam herdando cor/área clara do rodapé */
+.reviews {
+  background: linear-gradient(180deg, rgba(102,6,9,.96), rgba(73,3,5,.98)) !important;
+  color: #fff !important;
+  border: 1px solid rgba(255,196,0,.30);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 10px 28px rgba(0,0,0,.22);
+}
+
+.reviews .panel-title h2 {
+  color: #fff !important;
+}
+
+.reviews .review-card {
+  background: rgba(255,255,255,.08);
+  color: #fff;
+}
+
+.reviews .review-card p {
+  color: #ffe7e7;
+}
+
+/* Rodapé limpo, sem blocos enormes quebrando */
+footer {
+  align-items: start;
+}
+
+footer .panel,
+footer .reviews {
+  display: none !important;
+}
+
+/* Nota demonstrativa não deve virar caixa gigante */
+.demo-note {
+  max-width: 760px;
+  margin: 24px auto 0;
+  min-height: auto !important;
+}
+
+/* Melhora espaçamento do grid para evitar sobreposição visual */
+.page-grid {
+  align-items: start;
+}
+
+.content {
+  min-width: 0;
+}
+
+/* Cartão lateral de venda fica abaixo do carrinho sem apertar conteúdo */
+.cart + .aside-info,
+.aside-info {
+  margin-top: 16px;
+}
+
+/* Botão do carrinho desativado mais claro */
+.summary button:disabled,
+.cart-summary button:disabled {
+  background: #9b9b9b !important;
+  color: #fff;
+  cursor: not-allowed;
+}
+
+/* Ajuste mobile */
+@media (max-width: 900px) {
+  .page-layout,
+  .page-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .cart {
+    order: -1;
+  }
+
+  .selling-section,
+  .custom-section,
+  .reviews {
+    width: calc(100% - 24px);
+  }
+}

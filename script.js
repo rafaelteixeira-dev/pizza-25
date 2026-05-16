@@ -253,7 +253,7 @@ function atualizarCarrinho() {
   });
 
   document.getElementById("subtotal").textContent = moeda(subtotal);
-  document.getElementById("taxa").textContent = "R$ 0,00";
+  document.getElementById("taxa").textContent = "Confirmada no WhatsApp";
   document.getElementById("total").textContent = moeda(subtotal);
 }
 
@@ -371,3 +371,44 @@ function camposModalValidos() {
 
   return true;
 }
+
+
+function updateWhatsAppButton(){
+const btn=document.querySelector('.summary button');
+if(!btn)return;
+
+if(!pedido || pedido.length===0){
+btn.disabled=true;
+btn.textContent='Adicione um item para finalizar';
+}else{
+btn.disabled=false;
+btn.textContent='Enviar pedido pelo WhatsApp';
+}
+}
+
+const originalAtualizarCarrinho = atualizarCarrinho;
+
+atualizarCarrinho = function(){
+originalAtualizarCarrinho();
+updateWhatsAppButton();
+}
+
+document.addEventListener('DOMContentLoaded',()=>{
+updateWhatsAppButton();
+});
+
+function obterStatusFuncionamento(){
+const hora = new Date().getHours();
+const badge = document.querySelector('.open-badge');
+if(!badge)return;
+
+if(hora >= 19 && hora < 23){
+badge.innerHTML='🟢 Aberto agora — peça pelo WhatsApp';
+}else{
+badge.innerHTML='🔴 Fechado no momento — pedidos disponíveis das 19h às 23h';
+}
+}
+
+document.addEventListener('DOMContentLoaded',()=>{
+obterStatusFuncionamento();
+});

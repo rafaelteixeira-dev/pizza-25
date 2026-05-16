@@ -5,14 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pizzaria + Sabor | Delivery</title>
   <link rel="stylesheet" href="style.css">
+
+<meta name="description" content="Delivery de pizzas, combos e bebidas em São Carlos.">
+<link rel="icon" href="assets/logo-novo.png">
 </head>
+
 <body>
 
 <header class="topbar">
   <div class="brand">
     <img src="assets/logo-pizzaria.png" alt="Pizzaria + Sabor" class="brand-logo">
     <div>
-      <h1>Pizzaria <span>+Sabor</span></h1>
+      <h1>Pizzaria <span>+ Sabor</span></h1>
       <p>Desde 2013 • Delivery</p>
     </div>
   </div>
@@ -41,7 +45,7 @@
 
   <div class="hero-copy">
     <img src="assets/logo-pizzaria.png" alt="Pizzaria + Sabor" class="hero-logo">
-    <p class="open-badge">🍕 Aberto para pedidos online</p>
+    <p class="open-badge">🍕 Pedidos online disponíveis — funcionamento das 19h às 23h</p>
     <h2>Peça sua pizza<br><span>do seu jeito!</span></h2>
     <p class="hero-text">
       Combos, pizzas grandes de 8 pedaços, até 2 sabores, bordas recheadas e bebidas.
@@ -51,10 +55,13 @@
     <div class="hero-buttons">
       <a href="#montar" class="btn primary">Montar Pizza</a>
       <a href="#combos" class="btn secondary">Ver Combos</a>
-    </div>
+    
+<a href="#carrinho" class="btn whatsapp-fixed-top">Enviar pedido no WhatsApp</a>
+</div>
   </div>
 
   <div class="hero-combo">
+
     <img src="assets/combo-2salgadas-1doce.png" alt="Combo 2 salgadas e 1 doce">
   </div>
 </section>
@@ -146,6 +153,40 @@
         <button onclick="filtrarSabores('doce')">Doces</button>
       </div>
 
+<div class="cardapio-demo-cards">
+  <article>
+    <h3>Calabresa</h3>
+    <p>Calabresa, cebola, molho, azeitona e orégano.</p>
+    <span>Salgada</span>
+  </article>
+  <article>
+    <h3>Frango com Catupiry</h3>
+    <p>Frango, catupiry, molho, azeitona e orégano.</p>
+    <span>Salgada</span>
+  </article>
+  <article>
+    <h3>Portuguesa</h3>
+    <p>Mussarela, presunto, ovos, cebola, molho e orégano.</p>
+    <span>Salgada</span>
+  </article>
+  <article>
+    <h3>Quatro Queijos</h3>
+    <p>Mussarela, catupiry, parmesão e provolone.</p>
+    <span>Salgada</span>
+  </article>
+  <article>
+    <h3>Chocolate</h3>
+    <p>Chocolate cremoso com cobertura especial.</p>
+    <span>Doce</span>
+  </article>
+  <article>
+    <h3>Romeu e Julieta</h3>
+    <p>Mussarela e goiabada.</p>
+    <span>Doce</span>
+  </article>
+</div>
+
+
       <div class="flavors-list" id="listaSabores"></div>
     </section>
 
@@ -206,12 +247,83 @@
 
     <div class="summary">
       <p><span>Subtotal</span><strong id="subtotal">R$ 0,00</strong></p>
-      <p><span>Taxa de entrega</span><strong id="taxa">R$ 0,00</strong></p>
+      <p><span>Taxa de entrega</span><strong id="taxa">Confirmada no WhatsApp</strong></p>
       <p class="total"><span>Total</span><strong id="total">R$ 0,00</strong></p>
       <button onclick="finalizarWhatsApp()">Enviar no WhatsApp</button>
     </div>
   </aside>
+
+
+
+
+
+
 </main>
+
+<section class="panel reviews">
+<div class="panel-title">
+<span></span>
+<h2>O que nossos clientes dizem</h2>
+<span></span>
+</div>
+
+<div class="reviews-grid">
+<div class="review-card">
+<h3>⭐⭐⭐⭐⭐</h3>
+<p>“Pizza muito recheada e entrega rápida!”</p>
+</div>
+
+<div class="review-card">
+<h3>⭐⭐⭐⭐⭐</h3>
+<p>“O combo família vale muito a pena.”</p>
+</div>
+
+<div class="review-card">
+<h3>⭐⭐⭐⭐⭐</h3>
+<p>“Pedido fácil pelo WhatsApp e site muito bonito.”</p>
+</div>
+</div>
+</section>
+
+<section class="panel selling-section">
+<div class="panel-title">
+<span></span>
+<h2>O que este site oferece para sua pizzaria</h2>
+<span></span>
+</div>
+
+<div class="selling-grid">
+<div class="selling-card">🍕 Cardápio online personalizado</div>
+<div class="selling-card">🛒 Carrinho de pedidos</div>
+<div class="selling-card">📱 Layout adaptado para celular</div>
+<div class="selling-card">💬 Pedido automático no WhatsApp</div>
+<div class="selling-card">🥤 Combos, bebidas e adicionais</div>
+<div class="selling-card">📍 Integração com Google Maps</div>
+<div class="selling-card">⚙️ Possibilidade de painel administrativo</div>
+<div class="selling-card">🎨 Personalização completa da identidade visual</div>
+</div>
+</section>
+
+<section class="panel custom-section">
+<div class="panel-title">
+<span></span>
+<h2>Tudo pode ser personalizado</h2>
+<span></span>
+</div>
+
+<div class="selling-grid">
+<div class="selling-card">🏪 Nome da pizzaria</div>
+<div class="selling-card">🎨 Cores e identidade visual</div>
+<div class="selling-card">📸 Fotos e banners</div>
+<div class="selling-card">🍕 Sabores e combos</div>
+<div class="selling-card">💲 Preços e promoções</div>
+<div class="selling-card">📍 Endereço e WhatsApp</div>
+</div>
+
+<p class="demo-highlight">
+Este é um modelo demonstrativo que pode ser totalmente adaptado para qualquer pizzaria.
+</p>
+</section>
 
 <section class="location" id="localizacao">
   <div>
@@ -239,7 +351,11 @@
     <h3>Fale Conosco</h3>
     <p>(16) 3201-3022 • Atendimento via WhatsApp</p>
   </div>
-</footer>
+<p class="demo-note">Versão demonstrativa. Cardápio, preços, imagens e funcionalidades podem ser personalizados para sua pizzaria.</p>
+
+
+
+<p class="rafael-sign">Desenvolvido por Rafael Teixeira</p></footer>
 
 <div class="modal" id="modal" onclick="fecharModalFundo(event)">
   <div class="modal-box" onclick="event.stopPropagation()">
@@ -305,5 +421,8 @@
 </div>
 
 <script src="script.js"></script>
+
+<a href="#carrinho" class="mobile-order-btn">🍕 Pedir agora</a>
+
 </body>
 </html>

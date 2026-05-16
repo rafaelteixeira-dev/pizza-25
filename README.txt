@@ -24,3 +24,11 @@ Revisão final anti-erro do usuário:
 - Codifica corretamente a mensagem do WhatsApp.
 - Valida itens inválidos antes de adicionar ao carrinho.
 - Valida carrinho novamente antes de finalizar.
+
+
+Correções finais de layout:
+- Carrinho não fica mais tampando parte do site em telas menores/baixas.
+- Avaliações removidas do rodapé e reposicionadas como seção própria.
+- Corrigido fundo/vermelho estranho sobre avaliações.
+- Taxa de entrega mantém texto "Confirmada no WhatsApp".
+- Seções comerciais foram movidas para largura total, fora do grid do carrinho.
