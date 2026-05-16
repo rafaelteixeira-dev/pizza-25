@@ -253,7 +253,7 @@ function atualizarCarrinho() {
   });
 
   document.getElementById("subtotal").textContent = moeda(subtotal);
-  document.getElementById("taxa").textContent = "R$ 0,00";
+  document.getElementById("taxa").textContent = "Confirmada no WhatsApp";
   document.getElementById("total").textContent = moeda(subtotal);
 }
 
