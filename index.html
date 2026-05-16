@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pizzaria + Sabor | Delivery</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand">
+    <img src="assets/logo-pizzaria.png" alt="Pizzaria + Sabor" class="brand-logo">
+    <div>
+      <h1>Pizzaria <span>+Sabor</span></h1>
+      <p>Desde 2013 • Delivery</p>
+    </div>
+  </div>
+
+  <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+
+  <nav id="menu">
+    <a href="#inicio">Início</a>
+    <a href="#combos">Combos</a>
+    <a href="#montar">Montar Pizza</a>
+    <a href="#cardapio">Cardápio</a>
+    <a href="#bebidas">Bebidas</a>
+    <a href="#localizacao">Localização</a>
+  </nav>
+
+  <div class="top-actions">
+    <a href="tel:1632013022" class="phone">☎ (16) 3201-3022</a>
+    <a href="https://wa.me/5516996273247" target="_blank" class="whatsapp">WhatsApp</a>
+  </div>
+</header>
+
+<section class="hero" id="inicio">
+  <div class="hero-design circle-a"></div>
+  <div class="hero-design circle-b"></div>
+  <div class="hero-design wave"></div>
+
+  <div class="hero-copy">
+    <img src="assets/logo-pizzaria.png" alt="Pizzaria + Sabor" class="hero-logo">
+    <p class="open-badge">🍕 Aberto para pedidos online</p>
+    <h2>Peça sua pizza<br><span>do seu jeito!</span></h2>
+    <p class="hero-text">
+      Combos, pizzas grandes de 8 pedaços, até 2 sabores, bordas recheadas e bebidas.
+      Finalize direto pelo WhatsApp.
+    </p>
+
+    <div class="hero-buttons">
+      <a href="#montar" class="btn primary">Montar Pizza</a>
+      <a href="#combos" class="btn secondary">Ver Combos</a>
+    </div>
+  </div>
+
+  <div class="hero-combo">
+    <img src="assets/combo-2salgadas-1doce.png" alt="Combo 2 salgadas e 1 doce">
+  </div>
+</section>
+
+<section class="trust-bar">
+  <div>🚚 <strong>Entrega rápida</strong><span>Consulte sua região</span></div>
+  <div>🍕 <strong>Combos especiais</strong><span>Ótimos para compartilhar</span></div>
+  <div>💳 <strong>Pagamento fácil</strong><span>PIX, dinheiro e cartões</span></div>
+  <div>💬 <strong>Pedido no WhatsApp</strong><span>Prático e direto</span></div>
+</section>
+
+<main class="page-layout">
+  <section class="content">
+
+    <section class="panel" id="combos">
+      <div class="panel-title">
+        <span></span>
+        <h2>Combos Especiais</h2>
+        <span></span>
+      </div>
+
+      <div class="combo-list">
+        <article class="combo-card featured">
+          <div class="combo-img">
+            <img src="assets/combo-2salgadas-1doce.png" alt="Combo 2 salgadas e 1 doce">
+          </div>
+          <div class="combo-info">
+            <small>Mais pedido</small>
+            <h3>Combo 2 Salgadas + 1 Doce</h3>
+            <p>Promoção com 2 pizzas grandes salgadas + 1 pizza doce.</p>
+            <div class="price">
+              <span>Por apenas</span>
+              <strong>R$ 89,99</strong>
+            </div>
+            <button onclick="adicionarProduto('Combo 2 Salgadas + 1 Doce', 89.99)">Adicionar</button>
+          </div>
+        </article>
+
+        <article class="combo-card">
+          <div class="combo-img">
+            <img src="assets/combo-familia.jpg" alt="Combo família">
+          </div>
+          <div class="combo-info">
+            <small>Família</small>
+            <h3>Combo Família</h3>
+            <p>2 pizzas grandes + refrigerante 2 litros.</p>
+            <div class="price">
+              <span>Por apenas</span>
+              <strong>R$ 79,99</strong>
+            </div>
+            <button onclick="adicionarProduto('Combo Família', 79.99)">Adicionar</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="panel" id="montar">
+      <div class="panel-title">
+        <span></span>
+        <h2>Monte sua Pizza</h2>
+        <span></span>
+      </div>
+
+      <div class="mount-card">
+        <img src="assets/pizza-montar.jpg" alt="Pizza grande">
+        <div>
+          <small>Grande • 8 pedaços</small>
+          <h3>Escolha 1 ou 2 sabores</h3>
+          <p>Monte a pizza com um sabor inteiro ou meio a meio. Também é possível adicionar borda.</p>
+          <div class="price clean">
+            <span>A partir de</span>
+            <strong>R$ 32,00</strong>
+          </div>
+          <button onclick="abrirModal()">Montar Pizza</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel" id="cardapio">
+      <div class="panel-title">
+        <span></span>
+        <h2>Cardápio de Sabores</h2>
+        <span></span>
+      </div>
+
+      <div class="filters">
+        <button onclick="filtrarSabores('todos')">Todos</button>
+        <button onclick="filtrarSabores('salgada')">Salgadas</button>
+        <button onclick="filtrarSabores('doce')">Doces</button>
+      </div>
+
+      <div class="flavors-list" id="listaSabores"></div>
+    </section>
+
+    <section class="panel" id="bebidas">
+      <div class="panel-title">
+        <span></span>
+        <h2>Bebidas</h2>
+        <span></span>
+      </div>
+
+      <div class="drink-list">
+        <article class="drink-card">
+          <img src="assets/guarana-tiss.png" alt="Guaraná Tiss">
+          <div>
+            <h3>Guaraná Tiss 2L</h3>
+            <p>Refrigerante 2 litros.</p>
+            <strong>R$ 6,99</strong>
+            <button onclick="adicionarProduto('Guaraná Tiss 2L', 6.99)">Adicionar</button>
+          </div>
+        </article>
+
+        <article class="drink-card">
+          <img src="assets/guarana-sao-carlos.jpeg" alt="Guaraná São Carlos">
+          <div>
+            <h3>Guaraná São Carlos 2L</h3>
+            <p>Refrigerante 2 litros.</p>
+            <strong>R$ 9,99</strong>
+            <button onclick="adicionarProduto('Guaraná São Carlos 2L', 9.99)">Adicionar</button>
+          </div>
+        </article>
+
+        <article class="drink-card">
+          <img src="assets/coca-cola.jpg" alt="Coca-Cola">
+          <div>
+            <h3>Coca-Cola 2L</h3>
+            <p>Refrigerante 2 litros.</p>
+            <strong>R$ 9,99</strong>
+            <button onclick="adicionarProduto('Coca-Cola 2L', 9.99)">Adicionar</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+  </section>
+
+  <aside class="cart" id="carrinho">
+    <div class="cart-head">
+      <h2>Finalizar Pedido</h2>
+    </div>
+
+    <div id="pedidoVazio" class="cart-empty">
+      <div>🧾</div>
+      <h3>Pedido vazio</h3>
+      <p>Clique nos itens e monte seu pedido.</p>
+    </div>
+
+    <div id="itensPedido"></div>
+
+    <div class="summary">
+      <p><span>Subtotal</span><strong id="subtotal">R$ 0,00</strong></p>
+      <p><span>Taxa de entrega</span><strong id="taxa">R$ 0,00</strong></p>
+      <p class="total"><span>Total</span><strong id="total">R$ 0,00</strong></p>
+      <button onclick="finalizarWhatsApp()">Enviar no WhatsApp</button>
+    </div>
+  </aside>
+</main>
+
+<section class="location" id="localizacao">
+  <div>
+    <h2>Localização</h2>
+    <p><b>Endereço:</b> R. Iwagiro Toyama, 385 - Jardim Paulistano, São Carlos - SP, 13564-380</p>
+    <p><b>Telefone:</b> (16) 3201-3022</p>
+    <p><b>WhatsApp:</b> (16) 99627-3247</p>
+    <p><b>Horário:</b> Abre às 19:00</p>
+    <a class="btn primary" href="https://www.google.com/maps/search/?api=1&query=R.%20Iwagiro%20Toyama%20385%20Jardim%20Paulistano%20S%C3%A3o%20Carlos%20SP" target="_blank">Abrir no Mapa</a>
+  </div>
+
+  <iframe src="https://www.google.com/maps?q=R.%20Iwagiro%20Toyama%20385%20Jardim%20Paulistano%20S%C3%A3o%20Carlos%20SP&output=embed" loading="lazy"></iframe>
+</section>
+
+<footer>
+  <div>
+    <h3>Formas de Pagamento</h3>
+    <p>PIX • Dinheiro • Crédito • Débito • Vale refeição</p>
+  </div>
+  <div>
+    <h3>Funcionamento</h3>
+    <p>Todos os dias • Das 19h às 23h</p>
+  </div>
+  <div>
+    <h3>Fale Conosco</h3>
+    <p>(16) 3201-3022 • Atendimento via WhatsApp</p>
+  </div>
+</footer>
+
+<div class="modal" id="modal" onclick="fecharModalFundo(event)">
+  <div class="modal-box" onclick="event.stopPropagation()">
+    <header>
+      <h2>Monte sua Pizza</h2>
+      <button onclick="fecharModal()" aria-label="Fechar modal">×</button>
+    </header>
+
+    <div class="step"><span>1</span><p>Escolha a montagem</p></div>
+
+    <div class="options">
+      <label>
+        <input type="radio" name="montagem" value="1" checked onchange="atualizarModal()">
+        <b>Grande 1 sabor</b>
+        <small>Pizza grande com 8 pedaços.</small>
+      </label>
+
+      <label>
+        <input type="radio" name="montagem" value="2" onchange="atualizarModal()">
+        <b>Grande 2 sabores</b>
+        <small>Pizza meio a meio, 4 pedaços de cada sabor.</small>
+      </label>
+    </div>
+
+    <div class="step"><span>2</span><p>Escolha os sabores</p></div>
+
+    <div class="form-grid">
+      <div>
+        <label>Primeiro sabor</label>
+        <select id="sabor1" required></select>
+      </div>
+
+      <div id="boxSabor2">
+        <label>Segundo sabor</label>
+        <select id="sabor2" required></select>
+      </div>
+
+      <div>
+        <label>Borda</label>
+        <select id="borda">
+          <option value="">Sem borda</option>
+          <option>Catupiry</option>
+          <option>Cheddar</option>
+          <option>Chocolate</option>
+          <option>Goiabada</option>
+        </select>
+      </div>
+
+      <div>
+        <label>Quantidade</label>
+        <input type="number" id="quantidade" min="1" max="99" value="1" inputmode="numeric" oninput="validarQuantidade()">
+      </div>
+
+      <div class="full">
+        <label>Observação</label>
+        <input type="text" id="obs" maxlength="120" placeholder="Ex: sem cebola, cortar bem...">
+      </div>
+    </div>
+
+    <div class="modal-summary" id="resumoModal"></div>
+    <button class="modal-add" onclick="adicionarPizza()">Adicionar ao Pedido</button>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
